@@ -11,5 +11,8 @@ public interface BeanFactory {
 
     Object getBean(String name) throws BeansException;
 
-    //Object getBean(String name, Object... args) throws BeansException;
+    /**
+     * 含有构造方法参数的getBean方法
+     */
+    Object getBean(String name, Object... args) throws BeansException;
 }

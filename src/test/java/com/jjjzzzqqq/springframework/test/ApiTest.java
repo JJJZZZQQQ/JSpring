@@ -27,4 +27,23 @@ public class ApiTest {
         System.out.println(userService == userService_singleton);
     }
 
+    @Test
+    public void test_instance() {
+        // 1.初始化 BeanFactory
+        DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+
+        // 2.注册 bean
+        BeanDefinition beanDefinition = new BeanDefinition(UserService.class);
+        beanFactory.registerBeanDefinition("userService", beanDefinition);
+
+        // 3.第一次获取 bean  此时会调用createBean方法创建一个Bean
+        UserService userService = (UserService) beanFactory.getBean("userService","1");
+        userService.queryUserInfo();
+
+        // 4.第二次获取 bean from Singleton
+        UserService userService_singleton = (UserService) beanFactory.getSingleton("userService");
+        userService_singleton.queryUserInfo();
+
+        System.out.println(userService == userService_singleton);
+    }
 }
