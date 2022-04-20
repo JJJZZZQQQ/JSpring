@@ -19,11 +19,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * Bean definition reader for XML bean definitions.
- *
- * 博客：https://bugstack.cn - 沉淀、分享、成长，让自己和他人都能有所收获！
- * 公众号：bugstack虫洞栈
- * Create by 小傅哥(fustack)
+ * XmlBeanDefinition读取器
+ * 功能：加载Xml中定义的Bean对象
  */
 public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 
